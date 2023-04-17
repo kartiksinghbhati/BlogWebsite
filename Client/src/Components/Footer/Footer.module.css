@@ -1,0 +1,10 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 30px 0px 30px;
+    background-color: #fdfbfb;
+}
+
+.footer i {
+    margin-left: 20px;
+}
