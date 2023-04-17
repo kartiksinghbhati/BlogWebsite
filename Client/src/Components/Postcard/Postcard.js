@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 import './Postcard.css'
 
 
-export default function Postcard({ posts }) {
+export default function Postcard(props) {
 
   const PF = "http://localhost:5000/Images/";
   return (
 
     <div className='right-content'>
-      {posts.map((post, index) => (
+      {props.posts.map((post, index) => (
 
         <Link className='link' to={`/post/${post._id}`}>
           <div className='CardTwo top slide card'>
