@@ -1,4 +1,4 @@
-import React, { useState }from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import styles from './Register.module.css'
@@ -14,7 +14,7 @@ export default function Register() {
     e.preventDefault();
     setError(false);
     try {
-      const res = await axios.post("/auth/register", {
+      const res = await axios.post("https://blog-website-gamma-weld.vercel.app/api/auth/register", {
         username,
         email,
         password,
@@ -27,20 +27,20 @@ export default function Register() {
 
   return (
     <div className={styles.register}>
-        <span className={styles.registerTitle}>Register</span>
-        <form className={styles.registerForm} onSubmit={handleSubmit}>
-            <label>Username</label>
-            <input className={styles.registerInput} type="text" placeholder="Enter your username..." onChange={(e) => setUsername(e.target.value)}/>
-            <label>Email</label>
-            <input className={styles.registerInput} type="text" placeholder="Enter your email..." onChange={(e) => setEmail(e.target.value)}/>
-            <label>Password</label>
-            <input className={styles.registerInput} type="password" placeholder="Enter your password..." onChange={(e) => setPassword(e.target.value)}/>
-            <button className={styles.registerButton} type='submit'>Register</button>
-        </form>
-        <button className={styles.registerLoginButton}>
-          <Link className='link' to="/login">Login</Link>
-        </button>
-        {error && <span className={styles.error}>Something went wrong!</span>}
+      <span className={styles.registerTitle}>Register</span>
+      <form className={styles.registerForm} onSubmit={handleSubmit}>
+        <label>Username</label>
+        <input className={styles.registerInput} type="text" placeholder="Enter your username..." onChange={(e) => setUsername(e.target.value)} />
+        <label>Email</label>
+        <input className={styles.registerInput} type="text" placeholder="Enter your email..." onChange={(e) => setEmail(e.target.value)} />
+        <label>Password</label>
+        <input className={styles.registerInput} type="password" placeholder="Enter your password..." onChange={(e) => setPassword(e.target.value)} />
+        <button className={styles.registerButton} type='submit'>Register</button>
+      </form>
+      <button className={styles.registerLoginButton}>
+        <Link className='link' to="/login">Login</Link>
+      </button>
+      {error && <span className={styles.error}>Something went wrong!</span>}
     </div>
   )
 }
