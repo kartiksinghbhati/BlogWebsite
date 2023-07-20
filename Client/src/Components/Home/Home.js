@@ -18,11 +18,14 @@ export default function Home() {
     fetchPosts();
   }, [search])
 
+  console.log("HOME posts");
+  console.log(posts);
+
   return (
     <>
       <Header/>
       <div className="home">
-        <Postcard posts={posts}/>
+        <Postcard posts={posts} key={posts._id}/>
       </div>
       <Footer/>
     </>
