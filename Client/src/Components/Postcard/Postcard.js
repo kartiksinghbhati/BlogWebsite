@@ -5,14 +5,15 @@ import './Postcard.css'
 
 export default function Postcard(props) {
 
-  console.log("POSTCARD props.posts");
-  console.log(props.posts);
+  
+  let data = [];
+  data = props.posts;
 
   const PF = "https://blog-website-gamma-weld.vercel.app/Images/";
   return (
 
     <div className='right-content'>
-      {(props.posts)?.map((post, index) => (
+      {data?.map((post, index) => (
 
         <Link className='link' to={`/post/${post._id}`} key={post._id}>
           <div className='CardTwo top slide card'>
