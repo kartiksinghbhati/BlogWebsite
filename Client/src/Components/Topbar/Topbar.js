@@ -7,7 +7,7 @@ import defaultProfilePic from '../Images/defaultProfilePic.jpeg'
 
 export default function Topbar() {
 
-  const PF = "http://localhost:5000/Images/"
+  const PF = "https://blog-website-gamma-weld.vercel.app/Images/"
   const {user, dispatch} = useContext(Context);
 
   const handleLogout = () =>{

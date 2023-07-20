@@ -7,7 +7,7 @@ import axios from "axios";
 
 export default function Singlepost() {
     
-    const PF = "http://localhost:5000/Images/";
+    const PF = "https://blog-website-gamma-weld.vercel.app/Images/";
 
     const location = useLocation();
     const path = location.pathname.split("/")[2];

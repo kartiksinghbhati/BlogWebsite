@@ -5,11 +5,11 @@ import './Postcard.css'
 
 export default function Postcard(props) {
 
-  const PF = "http://localhost:5000/Images/";
+  const PF = "https://blog-website-gamma-weld.vercel.app/Images/";
   return (
 
     <div className='right-content'>
-      {props.posts.map((post, index) => (
+      {props.posts?.map((post, index) => (
 
         <Link className='link' to={`/post/${post._id}`}>
           <div className='CardTwo top slide card'>
