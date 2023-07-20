@@ -9,9 +9,6 @@ export default function Postcard(props) {
   let data = [];
   data = props.posts;
 
-  console.log("DATA: ");
-  console.log(data);
-
   const PF = "https://blog-website-gamma-weld.vercel.app/Images/";
   return (
 

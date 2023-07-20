@@ -12,12 +12,17 @@ export default function Home() {
 
   useEffect(() => {
     const fetchPosts = async ()=>{
-      const res = await axios.get("/posts"+ search)
-      console.log("res.data: ");
-      console.log(res.data);
-      if (Array.isArray(res.data)) {
-        setPosts(res.data);
-      } else {
+
+      try {
+        const res = await axios.get("/posts" + search);
+        console.log(res.data);
+        if (Array.isArray(res.data)) {
+          setPosts(res.data);
+        } else {
+          setPosts([]);
+        }
+      } catch (error) {
+        console.error("Error fetching posts:", error);
         setPosts([]);
       }
     }
