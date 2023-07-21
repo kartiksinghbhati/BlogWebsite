@@ -13,7 +13,7 @@ export default function Sidebar() {
 
     useEffect(() => {
         const getCats = async () => {
-            const res = await axios.get("/categories");
+            const res = await axios.get("https://blog-website-gamma-weld.vercel.app/api/categories");
             setCats(res.data);
         };
         getCats();
@@ -31,7 +31,7 @@ export default function Sidebar() {
         <div className={styles.sidebarItem}>
             <span className={styles.sidebarTitle}>CATEGORIES</span>
             <ul className={styles.sidebarList}>
-                {cats.map((c) => (
+                {cats?.map((c) => (
                     <Link to={`/?cat=${c.name}`} className="link">
                     <li className="sidebarListItem">{c.name}</li>
                     </Link>
